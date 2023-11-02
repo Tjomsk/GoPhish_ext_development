@@ -1,11 +1,11 @@
 {
     "manifest_version": 3,
     "name": "GoPhish",
-    "version": "0.0.1",
+    "version": "0.1",
     "description": "Detecting malicious URLS with ML",
     "permissions": ["storage","scripting","notifications","contextMenus"],
     "action": {
-        "default_popup": "GoPhish.html"
+        "default_popup": "gophish.html"
     },
     "background":{
         "service_worker": "background.js"
