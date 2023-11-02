@@ -1,0 +1,12 @@
+{
+    "name": "GoPhish",
+    "version": "0.0.1",
+    "description": "Detecting malicious URLS with ML",
+    "permissions": ["storage","scripting"],
+    "background":{
+        "service_worker": "background.js"
+    },
+    "content_scripts":{
+        "js":["contentScript.js"]
+    }
+}
