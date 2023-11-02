@@ -3,6 +3,9 @@
     "version": "0.0.1",
     "description": "Detecting malicious URLS with ML",
     "permissions": ["storage","scripting"],
+    "action": {
+        "default_popup": "GoPhish.html"
+    },
     "background":{
         "service_worker": "background.js"
     },
