@@ -18,3 +18,16 @@ const features = tf.data(url_data).map(row => {
     return featuresMap
 })
 .batch(10);
+
+const model = tf.sequential();
+model.add(tf.layers.dense(64, activation='relu'));
+model.add(tf.layers.dense(1));
+
+model.compile({ loss: 'binary_crossentropy', optimizer: 'adam' });
+
+model.fit(features, data.map(row => row.isMalicious), epochs=10);
+
+const url = tf.constant('https://www.example.com/');
+const prediction = model.predict(url);
+
+console.log(prediction);
