@@ -11,6 +11,9 @@
         "js": ["content.js"]
       }
     ],
+    "action": {
+      "default_popup": "GoPhish.html"
+    },
     "background": {
       "service_worker": "background.js"
     }
