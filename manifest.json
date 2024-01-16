@@ -3,15 +3,14 @@
     "version": "1.0",
     "description": "Sends the selected URL to a popup",
     "manifest_version": 3,
+    "permissions":["tabs","activeTab"],
     "content_scripts": [
       {
-        "matches": [
-          "https://example.com/*"
-        ],
+        "matches": ["<all_urls>"],
         "js": ["content.js"]
       }
     ],
-    "action": {
+    "browser_action": {
       "default_popup": "GoPhish.html"
     },
     "background": {
