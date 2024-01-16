@@ -3,7 +3,7 @@
     "version": "1.0",
     "description": "Sends the selected URL to a popup",
     "manifest_version": 3,
-    "permissions":["tabs","activeTab"],
+    "permissions":["tabs","activeTab", "contextMenus"],
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
