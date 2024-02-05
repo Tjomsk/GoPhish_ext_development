@@ -1,35 +1,20 @@
-
-// import * as mobilenet from '@tensorflow-models/mobilenet';
-import * as tf from '@tensorflow/tfjs';
-
-async function makePrediction(linkUrl) {
-    // const tf = await import('@tensorflow/tfjs');
-    const model = await tf.loadGraphModel('goPhish_model/model.json');
-
-}
-
-
-chrome.contextMenus.create({
-    id: "gophish_context_menu", //ID of context menu item
-    title: "GoPhish", //Title of context menu button
-    contexts: ["link"] //Only allows context menu for links
-})
-
-chrome.contextMenus.onClicked.addListener((info) =>{
-    
-    console.log(info);//Information about the item clicked and the context where the click happened
-    
-    //Extracts URL link as variable and displays it in the log
-    const linkUrl = info.linkUrl; 
-    console.log(linkUrl);
-
-    makePrediction(linkUrl);
-})
-
-// chrome.action.onClicked.addListener(async (tab) => {
-//     chrome.scripting.executeScript({
-//         target: {tabId: tab.tabId},
-//         files: ["content.js"]
-//     })
+// chrome.contextMenus.create({
+//     id: "gophish_context_menu", //ID of context menu item
+//     title: "GoPhish", //Title of context menu button
+//     contexts: ["link"] //Only allows context menu for links
 // })
 
+// chrome.contextMenus.onClicked.addListener((info) =>{
+//     console.log(info) //Information about the item clicked and the context where the click happened
+    
+//     //Extracts URL link as variable and displays it in the log
+//     const linkUrl = info.linkUrl; 
+//     console.log(linkUrl)
+// })
+
+chrome.action.onClicked.addListener(async (tab) => {
+    chrome.scripting.executeScript({
+        target: {tabId: tab.tabId},
+        files: ["content.js"]
+    })
+})
